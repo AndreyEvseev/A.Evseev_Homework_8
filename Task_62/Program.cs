@@ -1,4 +1,8 @@
 ﻿// Задача 62: Заполните спирально массив 4 на 4.
+// Уточнение задания:
+// 1. Задача решена для общего случая размерности массива. Позволяет создать массив 4 на 4.
+// 2. Количество строк и стоблцов задаётся потльзователем. 
+// 3. Заполненный массив выводится на экран автоматически. 
 
 void TitleInputErrorMessage()
 {
@@ -42,7 +46,7 @@ int EnterIntegerNumber(string text1, string text2, string text3)
 {
     string messegeForUser = string.Empty;
     messegeForUser = $"Введите {text1} {text2} {text3}: ";
-    int result = CheckNaturalNumbers(messegeForUser); // проверить
+    int result = CheckNaturalNumbers(messegeForUser); 
     return result; 
 }
 
@@ -53,8 +57,8 @@ void PrintArray(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
             Console.Write($"{array[i, j], 4} ");
         Console.WriteLine();
-        Console.WriteLine();
     }
+    Console.WriteLine();
 }
 
 
