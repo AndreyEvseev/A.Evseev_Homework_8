@@ -12,7 +12,7 @@ void TitleInputErrorMessage()
     Console.WriteLine("Уважаемый пользователь, вы ошиблись при вводе! ");
 }
 
-void PrintErrorMessageEnterNumber (string userNumber, string definitionNumber)
+void NumberInputErrorMessage (string userNumber, string definitionNumber)
 {
     TitleInputErrorMessage();
     Console.Write($"Введённое Вами значение: {userNumber},");
@@ -34,11 +34,11 @@ int CheckNaturalNumbers (string messageForUser)
         {
             number = int.Parse(userNumber);
             if(number > 0) i = 1;
-            else PrintErrorMessageEnterNumber(userNumber, definitionNumber); 
+            else NumberInputErrorMessage(userNumber, definitionNumber); 
         }
         else 
         {
-            PrintErrorMessageEnterNumber(userNumber, definitionNumber);
+            NumberInputErrorMessage(userNumber, definitionNumber);
         } 
         Console.WriteLine();
     }

@@ -12,7 +12,7 @@ void TitleInputErrorMessage()
     Console.WriteLine("Уважаемый пользователь, вы ошиблись при вводе! ");
 }
 
-void PrintErrorMessageEnterNumber (string userNumber, string definitionNumber)
+void NumberInputErrorMessage (string userNumber, string definitionNumber)
 {
     TitleInputErrorMessage();
     Console.Write($"Введённое Вами значение: {userNumber},");
@@ -34,18 +34,18 @@ int CheckNaturalNumbers (string messageForUser)
         {
             number = int.Parse(userNumber);
             if(number > 0) i = 1;
-            else PrintErrorMessageEnterNumber(userNumber, definitionNumber); 
+            else NumberInputErrorMessage(userNumber, definitionNumber); 
         }
         else 
         {
-            PrintErrorMessageEnterNumber(userNumber, definitionNumber);
+            NumberInputErrorMessage(userNumber, definitionNumber);
         } 
         Console.WriteLine();
     }
     return number;
 }
 
-int EnterIntegerNumber(string text1, string text2, string text3)
+int InputIntegerNumber(string text1, string text2, string text3)
 {
     string messegeForUser = string.Empty;
     messegeForUser = $"Введите {text1} {text2} {text3}: ";
@@ -74,9 +74,9 @@ void PrintArray(int[,] array)
 int row, column;
 string text1 = string.Empty, text2 = string.Empty, text3 = string.Empty;
 text1 = "количество"; text2 = "строк"; text3 = "массива";
-row = EnterIntegerNumber(text1, text2, text3);
+row = InputIntegerNumber(text1, text2, text3);
 text2 = "столбцов";
-column = EnterIntegerNumber(text1, text2, text3); 
+column = InputIntegerNumber(text1, text2, text3); 
 int[,] sourceArray = new int[row, column];
 FillArrayRandom(sourceArray);
 PrintArray(sourceArray);
@@ -85,7 +85,6 @@ for (int i = 0; i < sourceArray.GetLength(0); i++)
 {
     for (int j = 0; j < sourceArray.GetLength(1); j++)
     {
-        
         for (int k = 1; k < sourceArray.GetLength(1) - j; k++)
         {
             int help;
